@@ -226,15 +226,15 @@ export function Host() {
       <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4 text-center">
         <Mascot pose="celebrate" className="h-40 w-40" />
         <h1 className="text-4xl font-black text-eel">Podium</h1>
-        <div className="mt-8 flex items-end gap-4">
+        <div className="mt-8 flex w-full max-w-md items-end justify-center gap-2 sm:gap-4">
           {[
             { p: b, h: 120, color: "#E5E5E5", n: 2 },
             { p: a, h: 160, color: "#FFC800", n: 1 },
             { p: c, h: 96, color: "#CE822D", n: 3 },
           ].map((x) => (
-            <div key={x.n} className="w-28">
-              <div className="font-black text-eel">{x.p?.name ?? "—"}</div>
-              <div className="text-sm font-bold text-wolf">{x.p?.score ?? 0}</div>
+            <div key={x.n} className="w-1/3 min-w-0">
+              <div className="truncate text-sm font-black text-eel sm:text-base">{x.p?.name ?? "—"}</div>
+              <div className="text-xs font-bold text-wolf sm:text-sm">{x.p?.score ?? 0}</div>
               <div className="mt-2 rounded-t-2xl" style={{ height: x.h, background: x.color }} />
             </div>
           ))}

@@ -56,7 +56,7 @@ export function Certificate() {
           </div>
         </div>
 
-        <div className="mt-6 flex justify-center gap-3 print:hidden">
+        <div className="mt-6 flex flex-wrap justify-center gap-3 print:hidden">
           <Button onClick={printCert}>Print / Save PDF</Button>
           <Button variant="white" onClick={() => navigate("/learn")}>
             Keep learning

@@ -35,6 +35,7 @@ body,
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: #fff;
   color: #3c3c3c;
   font-family: var(--font-sans);
@@ -175,4 +176,53 @@ input {
     #e5e5e5 0 8px,
     transparent 8px 16px
   );
+}
+
+/* Green accent scrollbar (devices that actually render one) */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-polar);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-feather);
+  border: 3px solid var(--color-polar);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-feather-dark);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-color: var(--color-feather) var(--color-polar);
+    scrollbar-width: thin;
+  }
+}
+
+/* Touch devices: keep scrolling, hide the scrollbar chrome */
+@media (hover: none) and (pointer: coarse) {
+  html,
+  body,
+  *,
+  *::before,
+  *::after {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
 }

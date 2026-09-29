@@ -8,16 +8,23 @@ export function Landing() {
   return (
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-20 border-b-2 border-swan bg-white">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <Logo />
-          <div className="flex items-center gap-2">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4">
+          <button onClick={() => navigate("/")} className="shrink-0">
+            <span className="hidden sm:block">
+              <Logo />
+            </span>
+            <span className="sm:hidden">
+              <Logo compact />
+            </span>
+          </button>
+          <div className="flex min-w-0 items-center gap-2">
             <Button variant="ghost" className="hidden sm:inline-flex" onClick={() => navigate("/leaderboard")}>
               Scoreboard
             </Button>
-            <Button variant="secondary" onClick={() => navigate("/play")}>
+            <Button variant="secondary" className="px-3 text-xs sm:px-5 sm:text-[15px]" onClick={() => navigate("/play")}>
               Join game
             </Button>
-            <Button onClick={() => navigate(p.onboarded ? "/learn" : "/welcome")}>
+            <Button className="px-3 text-xs sm:px-5 sm:text-[15px]" onClick={() => navigate(p.onboarded ? "/learn" : "/welcome")}>
               {p.onboarded ? "Continue" : "Get started"}
             </Button>
           </div>

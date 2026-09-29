@@ -47,16 +47,16 @@ export function Leaderboard() {
         </div>
       </div>
 
-      <div className="mt-8 flex items-end justify-center gap-3">
+      <div className="mt-8 flex w-full max-w-md items-end justify-center gap-2 sm:gap-3">
         {[top[1], top[0], top[2]].map((person, idx) => {
           if (!person) return null;
           const place = idx === 1 ? 1 : idx === 0 ? 2 : 3;
           const h = place === 1 ? 140 : place === 2 ? 110 : 90;
           const colors = ["#E5E5E5", "#FFC800", "#CE822D"];
           return (
-            <div key={person.name} className="flex w-24 flex-col items-center">
+            <div key={person.name} className="flex w-1/3 min-w-0 flex-col items-center">
               <div className="mb-2 text-2xl">{place === 1 ? "👑" : place === 2 ? "🥈" : "🥉"}</div>
-              <div className="text-sm font-black text-eel">{person.name}</div>
+              <div className="w-full truncate text-center text-xs font-black text-eel sm:text-sm">{person.name}</div>
               <div className="text-xs font-bold text-wolf">{person.xp} XP</div>
               <div
                 className="mt-2 w-full rounded-t-2xl"
