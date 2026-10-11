@@ -1,5 +1,7 @@
 # Nihongo — Learn Japanese the fun way
 
+[![Live demo](https://img.shields.io/badge/live-demo-4f8cff?style=flat-square)](https://nihongo-alt.vercel.app)
+
 An interactive Japanese-learning web app: lessons, quizzes, pronunciation practice, and classroom multiplayer. Built with React 19, TypeScript, Vite, and Tailwind CSS 4, and shipped as a single-file static bundle for the UHB10802 course.
 
 ## Features
